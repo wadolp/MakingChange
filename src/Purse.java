@@ -36,11 +36,28 @@ public class Purse {
 
         return total;
     }
+    public String toString(){
+        StringBuilder result = new StringBuilder();
+        for (Map.Entry<Denomination, Integer> entry : map.entrySet()) {
+            if (result.length() > 0) {
+                result.append(", ");
+            }
+            result.append(entry.getKey().name())
+                    .append(" ")
+                    .append(entry.getValue());
+        }
+        String output = result.toString();
+
+        return output;
+    }
 
 
     //Testing Ground
     public static void main(String[] args) {
         Purse purse = new Purse();
+        Denomination hundred = new Denomination("Hundred",100.0,"Bill","hundred.png");
+        Denomination twenty = new Denomination("Twenty",20.0,"Bill","twenty.png");
+        Denomination five = new Denomination("Five",5.0,"Bill","five.png");
         Denomination dollar = new Denomination("Dollar", 1.0, "Bill", "dollar.png");
         Denomination quarter = new Denomination("Quarter", 0.25, "Coin", "quarter.png");
         Denomination dime = new Denomination("Dime", 0.1, "Coin", "dime.png");
@@ -51,6 +68,7 @@ public class Purse {
         purse.add(penny, 3);
 
         System.out.println(String.format("%.2f",purse.getValue()));
+        System.out.println(purse.toString());
 
     }
 }
