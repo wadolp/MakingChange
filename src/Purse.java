@@ -7,7 +7,7 @@ public class Purse {
     //Method to add currency to Purse
     public void add(Denomination type, int num) {
 
-        //Function provided by ChatGPT
+
         map.merge(type,num, Integer::sum);
 
     }

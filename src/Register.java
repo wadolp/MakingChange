@@ -2,10 +2,12 @@ public class Register {
     public static void main(String[] args) {
         Register register = new Register();
         Purse purse1 = new Purse();
-        purse1=register.makeChange(54.32);
+        purse1 = register.makeChange(54.32);
         System.out.println(purse1.toString());
     }
     public Purse makeChange(double amt){
+        amt = amt * 100;
+        int int_amt = (int) amt;
         Purse purse = new Purse();
         Denomination hundred = new Denomination("Hundred",100.0,"Bill","hundred.png");
         Denomination twenty = new Denomination("Twenty",20.0,"Bill","twenty.png");
@@ -16,40 +18,40 @@ public class Register {
         Denomination nickel = new Denomination("Nickel", 0.05, "Coin", "nickel.png");
         Denomination penny = new Denomination("Penny", 0.01, "Coin", "penny.png");
         do{
-            if(amt > 100){
-                amt = amt - 100;
+            if(int_amt >= 10000){
+                int_amt = int_amt - 10000;
                 purse.add(hundred,1);
             }
-            else if (amt > 20) {
-                amt = amt - 20;
+            else if (int_amt >= 2000) {
+                int_amt = int_amt - 2000;
                 purse.add(twenty,1);
             }
-            else if(amt > 5){
-                amt = amt - 5;
+            else if(int_amt >= 500){
+                int_amt = int_amt - 500;
                 purse.add(five,1);
             }
-            else if(amt > 1){
-                amt = amt - 1;
+            else if(int_amt >= 100){
+                int_amt = int_amt - 100;
                 purse.add(dollar,1);
             }
-            else if(amt > 0.25){
-                amt = amt - 0.25;
+            else if(int_amt >= 25){
+                int_amt = int_amt - 25;
                 purse.add(quarter,1);
             }
-            else if(amt > 0.1){
-                amt = amt - 0.1;
+            else if(int_amt >= 10){
+                int_amt = int_amt - 10;
                 purse.add(dime,1);
             }
-            else if(amt > 0.05){
-                amt = amt - 0.05;
+            else if(int_amt >= 5){
+                int_amt = int_amt - 5;
                 purse.add(nickel,1);
             }
-            else if(amt > 0.01){
-                amt = amt - 0.01;
+            else if(int_amt >= 1){
+                int_amt = int_amt - 1;
                 purse.add(penny,1);
             }
 
-        }while(amt > 0);
+        }while(int_amt > 0);
 
 
 
