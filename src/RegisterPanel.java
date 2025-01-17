@@ -49,7 +49,7 @@ public class RegisterPanel extends JPanel {
                 //display
                 repaint();
                 //clear input
-                input.setText("");
+                //input.setText("");
 
             }catch (NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "Please enter a number!", "Error", JOptionPane.ERROR_MESSAGE);
