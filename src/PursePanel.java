@@ -15,30 +15,36 @@ public class PursePanel extends JPanel {
 
     }
 
-    @Override
-    protected void paintComponent(Graphics g){
 
+    @Override
+    protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        int xStart = 50; // Initial x position for the first group
-        int yStart = 50; // Initial y position
+        int x = 50; // Initial x position for the first group
+        int y = 50; // Initial y position
+
+        if (purse == null) return;
 
         for (Map.Entry<Denomination, Integer> entry : purse.map.entrySet()) {
-            String image = entry.getKey().img();
+            Denomination denom = entry.getKey();
             int count = entry.getValue();
 
-            Image icon = Toolkit.getDefaultToolkit().getImage(image);
-
+            // For now, let's draw colored rectangles with denomination names
+            // until we set up the images properly
             for (int i = 0; i < count; i++) {
-                // Draw each image with a slight offset for repeats
-                g2d.drawImage(icon, xStart + i * 5, yStart + i * 5, null);
+                g2d.setColor(new Color(0, 100, 0));
+                g2d.fillRect(x, y, ICON_WIDTH, ICON_HEIGHT);
+                g2d.setColor(Color.BLACK);
+                g2d.drawRect(x, y, ICON_WIDTH, ICON_HEIGHT);
+                g2d.drawString(denom.name(), x + 5, y + ICON_HEIGHT/2);
+
+                x += ICON_WIDTH + SPACING;
+                if (x + ICON_WIDTH > getWidth()) {
+                    x = SPACING;
+                    y += ICON_HEIGHT + SPACING;
+                }
             }
-
-            // Move to the next group position
-            xStart += 100; // Adjust spacing between groups
         }
-
-
     }
 }

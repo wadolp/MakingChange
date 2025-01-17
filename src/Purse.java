@@ -57,6 +57,7 @@ public class Purse {
         Purse purse = new Purse();
         Denomination hundred = new Denomination("Hundred",100.0,"Bill","hundred.png");
         Denomination twenty = new Denomination("Twenty",20.0,"Bill","twenty.png");
+        Denomination ten = new Denomination("Ten",10.0,"Bill","ten.png");
         Denomination five = new Denomination("Five",5.0,"Bill","five.png");
         Denomination dollar = new Denomination("Dollar", 1.0, "Bill", "dollar.png");
         Denomination quarter = new Denomination("Quarter", 0.25, "Coin", "quarter.png");

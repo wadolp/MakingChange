@@ -8,6 +8,7 @@ public class RegisterPanel extends JPanel {
     JPanel inputPanel;
     JTextField input;
     PursePanel changePanel;
+    //Graphics g;
 
 
     public RegisterPanel() {
@@ -46,7 +47,7 @@ public class RegisterPanel extends JPanel {
                 //Update Purse
                 changePanel.purse = register.makeChange(amount);
                 //display
-               // changePanel.paint();
+                repaint();
                 //clear input
                 input.setText("");
 

@@ -11,6 +11,7 @@ public class Register {
         Purse purse = new Purse();
         Denomination hundred = new Denomination("Hundred",100.0,"Bill","hundred.png");
         Denomination twenty = new Denomination("Twenty",20.0,"Bill","twenty.png");
+        Denomination ten = new Denomination("Ten",10.0,"Bill","ten.png");
         Denomination five = new Denomination("Five",5.0,"Bill","five.png");
         Denomination dollar = new Denomination("Dollar", 1.0, "Bill", "dollar.png");
         Denomination quarter = new Denomination("Quarter", 0.25, "Coin", "quarter.png");
@@ -25,6 +26,10 @@ public class Register {
             else if (int_amt >= 2000) {
                 int_amt = int_amt - 2000;
                 purse.add(twenty,1);
+            }
+            else if (int_amt >= 1000) {
+                int_amt = int_amt - 1000;
+                purse.add(ten,1);
             }
             else if(int_amt >= 500){
                 int_amt = int_amt - 500;
