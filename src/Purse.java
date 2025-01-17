@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Purse {
     //construction of Hash Map
-    Map<Denomination,Integer> map = new HashMap<>();
+    public Map<Denomination,Integer> map = new HashMap<>();
 
     //Method to add currency to Purse
     public void add(Denomination type, int num) {

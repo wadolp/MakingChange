@@ -8,16 +8,8 @@ public class MakingChange {
         frame.setSize(500, 500);
 
         RegisterPanel panel = new RegisterPanel();
-
-
-
-
-
-
-
-
-
-
+        frame.add(panel);
+        //frame.pack();
         frame.setVisible(true);
     }
 }
