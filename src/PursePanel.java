@@ -1,7 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
+/*
+PursePanel (class, extends JPanel)
+	purse: Purse    // represents the amount to display—initialize to empty Purse
+	paintComponent(Graphics g): void   // holds the logic for displaying purse contents
 
+ */
 public class PursePanel extends JPanel {
     public Purse purse;
     private final int ICON_WIDTH = 50;  // Adjust size as needed

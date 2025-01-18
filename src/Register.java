@@ -1,3 +1,9 @@
+/*
+Register (class)
+makeChange(amt: double): Purse   // takes an amt and returns a Purse containing that amount in the fewest number of bills and coins.
+	static main(string[] args): void   //  creates a Register and demonstrates that it works
+
+*/
 public class Register {
     public static void main(String[] args) {
         Register register = new Register();
@@ -6,6 +12,7 @@ public class Register {
         System.out.println(purse1.toString());
     }
     public Purse makeChange(double amt){
+        //Convert to Integer to avoid errors with double
         amt = amt * 100;
         int int_amt = (int) amt;
         Purse purse = new Purse();
@@ -18,6 +25,7 @@ public class Register {
         Denomination dime = new Denomination("Dime", 0.1, "Coin", "dime.png");
         Denomination nickel = new Denomination("Nickel", 0.05, "Coin", "nickel.png");
         Denomination penny = new Denomination("Penny", 0.01, "Coin", "penny.png");
+        //if else chain for putting currency into purse
         do{
             if(int_amt >= 10000){
                 int_amt = int_amt - 10000;
